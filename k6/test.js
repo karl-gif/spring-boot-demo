@@ -1,7 +1,6 @@
 import http from 'k6/http'
 import { check, sleep } from 'k6'
 
-
 export let options = {
 
     //vus: 5000,
@@ -9,9 +8,9 @@ export let options = {
     //iterations:5000,
  
     stages: [
-        {duration: '30s', target: 5000},
-        {duration: '30s', target: 5000},
-        {duration: '30s', target: 0}
+        {duration: '20s', target: 2000},
+        {duration: '20s', target: 2000},
+        {duration: '20s', target: 0}
     ],
 
     thresholds: {  
@@ -21,7 +20,8 @@ export let options = {
         //http_req_duration: ["p(80) < 3000", "p(100) < 6000"],
 
         // 100% of requests must finish within 3 ms
-        //http_req_duration: ["avg<1000"]      
+        //http_req_duration: ["avg<1000"]  
+        iteration_duration: ["p(90) < 1500", "p(100) < 2000"]    
     },
 }
 
@@ -35,5 +35,5 @@ export default function(){
         'is status 200': (r) => r.status === 200
       }); 
       
-    //sleep(1);
+    sleep(1);
 }

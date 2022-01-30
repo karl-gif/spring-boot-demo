@@ -5,15 +5,11 @@ oc new-app --as-deployment-config --name spring-boot-app -i java https://github.
 
 oc expose service/spring-boot-app
 
-oc autoscale dc/spring-boot-app --min=1 --max=10 --cpu-percent=10
-
-oc delete hpa spring-boot-app
-
 
 
 http://localhost:8080/swagger2-demo/swagger-ui.html
 
 http://spring-boot-app-spring-boot-demo.apps-crc.testing/swagger2-demo/swagger-ui.html
 
-
+--console
 https://console-openshift-console.apps-crc.testing
