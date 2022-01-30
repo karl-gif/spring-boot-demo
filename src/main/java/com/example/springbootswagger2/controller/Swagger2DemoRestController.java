@@ -43,7 +43,7 @@ public class Swagger2DemoRestController {
 	@RequestMapping(value = "/getStudents", method = RequestMethod.GET)
 	public List<Student> getStudents() throws InterruptedException {
 
-		//Thread.sleep(10000);
+		Thread.sleep(10000);
 
 		LOGGER.info(String.format("Info logged - Count %s", count));
 

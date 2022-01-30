@@ -1,0 +1,9 @@
+oc new-app --as-deployment-config --name spring-boot-app -i java https://github.com/karl-gif/spring-boot-demo.git#deployment_test
+
+oc expose service/spring-boot-app
+
+
+
+
+
+http://spring-boot-app-spring-boot-demo.apps-crc.testing/swagger2-demo/swagger-ui.html
