@@ -10,3 +10,6 @@ oc expose service/spring-boot-app
 
 
 http://spring-boot-app-spring-boot-demo.apps-crc.testing/swagger2-demo/swagger-ui.html
+
+
+https://console-openshift-console.apps-crc.testing
