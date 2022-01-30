@@ -4,7 +4,7 @@ import { check, sleep } from 'k6'
 
 export let options = {
 
-    vus: 2,
+    vus: 1,
     duration: '20s',
     //iterations:10,
  
@@ -28,7 +28,8 @@ export let options = {
 
 export default function(){
   
-    const res = http.get('http://localhost:8080/swagger2-demo/getStudents');
+    //const res = http.get('http://localhost:8080/swagger2-demo/getStudents');
+    const res = http.get('http://spring-boot-app-spring-boot-demo.apps-crc.testing/swagger2-demo/getStudents');
     
     check(res, {
         'is status 200': (r) => r.status === 200

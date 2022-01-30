@@ -1,3 +1,6 @@
+oc new-project spring-boot-demo
+
+
 oc new-app --as-deployment-config --name spring-boot-app -i java https://github.com/karl-gif/spring-boot-demo.git#deployment_test
 
 oc expose service/spring-boot-app
