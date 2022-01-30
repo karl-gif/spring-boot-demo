@@ -4,15 +4,15 @@ import { check, sleep } from 'k6'
 
 export let options = {
 
-    vus: 1,
-    duration: '20s',
-    //iterations:10,
+    //vus: 5000,
+    //duration: '30s',
+    //iterations:5000,
  
-    // stages: [
-    //     {duration: '15s', target: 50},
-    //     {duration: '10s', target: 50},
-    //     {duration: '5s', target: 0}
-    // ],
+    stages: [
+        {duration: '30s', target: 5000},
+        {duration: '30s', target: 5000},
+        {duration: '30s', target: 0}
+    ],
 
     thresholds: {  
         
@@ -35,5 +35,5 @@ export default function(){
         'is status 200': (r) => r.status === 200
       }); 
       
-    sleep(1);
+    //sleep(1);
 }
