@@ -3,15 +3,15 @@ import { check, sleep } from 'k6'
 
 export let options = {
 
-    //vus: 5000,
-    //duration: '30s',
+    vus: 2000,
+    duration: '30s',
     //iterations:5000,
  
-    stages: [
-        {duration: '20s', target: 2000},
-        {duration: '20s', target: 2000},
-        {duration: '20s', target: 0}
-    ],
+    // stages: [
+    //     {duration: '20s', target: 2000},
+    //     {duration: '20s', target: 2000},
+    //     {duration: '20s', target: 0}
+    // ],
 
     thresholds: {  
         
@@ -21,7 +21,8 @@ export let options = {
 
         // 100% of requests must finish within 3 ms
         //http_req_duration: ["avg<1000"]  
-        iteration_duration: ["p(90) < 1500", "p(100) < 2000"]    
+        //iteration_duration: ["p(90) < 1500", "p(100) < 2000"],
+         
     },
 }
 
@@ -35,5 +36,5 @@ export default function(){
         'is status 200': (r) => r.status === 200
       }); 
       
-    sleep(1);
+    
 }
