@@ -3,8 +3,8 @@ import { check, sleep } from 'k6'
 
 export let options = {
 
-    vus: 2000,
-    iterations: 4000,
+    vus: 5000,
+    iterations: 10000,
     //duration: '20s',
     
  
