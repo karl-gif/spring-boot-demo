@@ -6,8 +6,8 @@ WORKDIR /spring-boot-demo
 
 ADD . .
 
-USER root
-RUN chmod 777 /spring-boot-demo
+#USER root
+#RUN chmod 777 /spring-boot-demo
 
 RUN mvn clean verify test
 
