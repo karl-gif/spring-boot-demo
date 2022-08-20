@@ -5,4 +5,4 @@ WORKDIR /spring-boot-demo
 
 ADD . .
 
-CMD ["sh", "-c", "mvn clean verify test"]
+CMD ["sh", "-c", "ls -la && pwd && mvn clean verify test"]
