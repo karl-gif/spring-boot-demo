@@ -7,6 +7,6 @@ WORKDIR /spring-boot-demo
 ADD . .
 
 USER root
-RUN chown /spring-boot-demo 1000660000
+RUN chmod 777 /spring-boot-demo/src/target
 
 CMD ["sh", "-c", "ls /spring-boot-demo -la && ls /.m2 -la && ls /.m2/repository -la && pwd && mvn clean verify test"]
